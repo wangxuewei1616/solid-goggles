@@ -1,0 +1,10 @@
+
+#encoding=utf-8
+from lxml import html 
+
+x = html.parse('http://www.mtime.com/hotest/')
+titles = x.xpath("//div[@class='picbox']/dl/dt/a/text()")
+print "We got %s titles:" % len(titles)
+for title in titles:
+    print title
+    
